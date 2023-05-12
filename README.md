@@ -1,2 +1,0 @@
-# JustWorship
-Church Website
