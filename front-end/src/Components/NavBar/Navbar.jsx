@@ -5,8 +5,19 @@ import { VscThreeBars } from "react-icons/vsc";
 import "./Navbar.css";
 
 const Navbar = () => {
-  // <==========================Using useState to make the navBar responsive==============.
+  // <==========================Using useState to make the navBar responsive==================>
   const [isMobile, setIsMobile] = useState(false);
+
+  // <===================== Using usestate for the navbar dropdown========================>
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const handleDropdownOpen = () => {
+    setIsDropdownOpen(true);
+  };
+
+  const handleDropdownClose = () => {
+    setIsDropdownOpen(false);
+  };
 
   return (
     <section className="navBarSection">
@@ -17,8 +28,7 @@ const Navbar = () => {
           </a>
         </div>
 
-
-        {/* <===================== Function for that retuns false for the value of isMobile once any of the navLinks is clicked ========================>  */}
+        {/* <===================== Function that retuns false for the value of isMobile once any of the navLinks is clicked ========================>  */}
         <div
           className={isMobile ? "nav-bar-mobile" : "navBar"}
           onClick={() => setIsMobile(false)}
@@ -34,10 +44,22 @@ const Navbar = () => {
                 About
               </a>
             </li>
-            <li className="navItem">
-              <a href="#" className="navLink">
+            <li
+              onMouseEnter={handleDropdownOpen}
+              onMouseLeave={handleDropdownClose}
+              className="navItem dropdown"
+            >
+              <a href="/" className="navLink">
                 Event
               </a>
+              {isDropdownOpen && (
+                <div className="dropdown-content">
+                  <a href="/">Campus Tour</a>
+                  <a href="/">Worship Meeting</a>
+                  <a href="/">Retreat</a>
+                  <a href="/">Live Recording</a>
+                </div>
+              )}
             </li>
             <li className="navItem">
               <a href="#" className="navLink">
