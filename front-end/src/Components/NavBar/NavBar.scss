@@ -18,7 +18,7 @@
   justify-content: space-between;
   background: var(--whiteColor);
   width: 100%;
-  padding: 1rem;
+  padding: .2rem 1rem;
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(2, 15, 29, 0.295);
 
@@ -33,7 +33,6 @@
     top: 25px;
     left: 0;
     background-color: #fff;
-   
     box-shadow: 0 2px 4px rgba(2, 15, 29, 0.295);
     z-index: 1;
     display: none;
@@ -57,13 +56,9 @@
   }
 
   .logo {
-    cursor: pointer;
-    justify-content: center;
-    align-items: center;
     img {
       width: 120px;
       height: 120px;
-      // transform: translateY(5px);
     }
   }
 
@@ -72,6 +67,13 @@
   }
 
   @media screen and (max-width: 768px) {
+    .logo {
+      img {
+        width: 80px;
+        height: 80px;
+        // transform: translateY(5px);
+      }
+    }
     .navBar {
       display: none;
     }

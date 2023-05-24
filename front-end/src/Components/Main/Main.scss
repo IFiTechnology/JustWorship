@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,900&display=swap");
+
+:root {
+  --PrimaryColor: hsl(44, 95%, 43%);
+  --SecondaryColor: hsla(180, 6%, 85%, 0.938);
+  --gradientColor: linear-gradient(
+    to right,
+    hsl(48, 11%, 74%),
+    hsl(44, 92%, 49%)
+  );
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(201, 33%, 16%);
+  --textColor: hsl(240, 4%, 36%);
+}
+.main{
+  background: url(../../Assets/BGImage1.jpg);
+  padding-top: 20px;
+  background-size:cover;
+  background-position:right;
+  background-attachment:fixed;
+
+.sectionTitle{
+  font-size: 40px;
+  font-weight: 600;
+  margin-top: 4rem;
+  margin-left: 10px;
+  padding-left: 2px;
+  border-left: 5px var(--PrimaryColor) solid;
+  color: var(--whiteColor);
+}
+.events {
+  margin-top: 1rem;
+  //   width:100vw;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 40px 20px;
+  
+}
+.eventCard {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin-bottom: 60px;
+}
+.eventCard > div {
+  box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.5);
+}
+.eventCard-image {
+  width: 300px;
+  height: 220px;
+}
+.eventCard-image > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: bottom;
+}
+.eventCard-text {
+  margin: -30px auto;
+  margin-bottom: -50px;
+  height: 220px;
+  width: 220px;
+  background-color: white;
+  color: black;
+  padding: 10px;
+}
+
+.eventCard-title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  margin-top: 2px;
+}
+.eventCard-body {
+  font-size: .8rem;
+}
+.eventCard-date {
+  width: 100px;
+  height: 60px;
+  background-color: var(--PrimaryColor);
+  color: #fff;
+  margin-left: auto;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+}
