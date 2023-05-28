@@ -85,13 +85,40 @@
 
 @media screen and (min-width: 500px) {
   .home .homeContent .textDiv .smallText {
-    font-size: 40px;
+    font-size: 17px;
+    font-weight: 300;
   }
   .home .homeContent .textDiv .homeTitle {
-    font-size: 50px;
+    font-size: 25px;
+    font-weight: 700;
+    word-break: break-all;
+  }
+  .home .homeContent .buttonDiv {
+    margin-top: 10px;
+  }
+  .home .homeContent .buttonDiv .btn {
+    font-weight: 500;
+    font-size: 13px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .home .homeContent {
+    margin: 4rem;
+  }
+  .home .homeContent .textDiv .smallText {
+    font-size: 17px;
+    font-weight: 300;
+  }
+  .home .homeContent .textDiv .homeTitle {
+    font-size: 35px;
+    font-weight: 700;
+    word-break: break-all;
+  }
+  .home .homeContent .buttonDiv {
+    margin-top: 10px;
   }
   .home .homeContent .buttonDiv .btn {
     font-weight: 600;
-    font-size: 18px;
+    font-size: 13px;
   }
 }/*# sourceMappingURL=Home.css.map */

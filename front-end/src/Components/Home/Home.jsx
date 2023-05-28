@@ -11,15 +11,15 @@ const Home = () => {
 
       <div className="homeContent container">
         <div className="textDiv">
-          <h1 className="homeTile">
-          Inspiring intimacy with GOD through Worship and Praise
+          <h1 className="homeTitle">
+          Inspiring intimacy  <br /> with GOD through Worship <br /> and Praise
           </h1>
           <p className="smallText">
           Amongst the thousand let your voice be heard.
           </p>
         </div>
         <div className="buttonDiv">
-          <button className="btn join">Join US</button>
+          <button className="btn join">Follow US</button>
           <button className="btn live">LIVE STREAM</button>
         </div>
       </div>

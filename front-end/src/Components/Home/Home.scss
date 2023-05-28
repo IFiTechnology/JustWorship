@@ -101,20 +101,53 @@
 @media screen and (min-width: 500px) {
   .home {
     .homeContent {
+      
       .textDiv {
         .smallText {
-          font-size: 40px;
+          font-size: 17px;
+          font-weight: 300;
         }
 
         .homeTitle {
-            font-size: 50px;
+          font-size: 25px;
+          font-weight: 700;
+          word-break: break-all;
         }
       }
 
-      .buttonDiv{
+      .buttonDiv {
+        margin-top: 10px;
         .btn {
-            font-weight: 600;
-            font-size: 18px;
+          font-weight: 500;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .home {
+    .homeContent {
+      margin: 4rem;
+      .textDiv {
+        .smallText {
+          font-size: 17px;
+          font-weight: 300;
+        }
+
+        .homeTitle {
+          font-size: 35px;
+          font-weight: 700;
+          word-break: break-all;
+        }
+      }
+
+      .buttonDiv {
+        margin-top: 10px;
+        .btn {
+          font-weight: 600;
+          font-size: 13px;
         }
       }
     }

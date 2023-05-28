@@ -3,11 +3,19 @@ import Wgathering from "../../Assets/WGathering.jpg";
 import JWUnec from "../../Assets/JWUnec.jpg";
 import JWAbuja from "../../Assets/JWAbuja.jpg";
 import LiveRecording from "../../Assets/LiveRecording.jpg";
+import PstChidi from "../../Assets/PstChidi1.jpg";
+import RevGlorious from "../../Assets/RevGlorious.jpg";
+import PstEbuka from "../../Assets/PstEbuka.jpg";
+import { FaFacebookF } from "react-icons/fa";
+import { AiFillInstagram } from "react-icons/ai";
+import { RiMessengerLine } from "react-icons/ri";
+import { ImWhatsapp } from "react-icons/im";
 import "./Main.css";
 
 const Main = () => {
   return (
     <div className="main">
+      {/*====================== Event Section ==============================*/}
       <section className="event">
         <h1 className="sectionTitle">Upcoming Events</h1>
         <div class="events">
@@ -68,9 +76,79 @@ const Main = () => {
           </div>
         </div>
       </section>
-
+      {/*====================== Leadership Section =========================*/}
       <section className="leadership">
-        <h1 className="sectionTitle">Our Leadership</h1>
+        <h1 className="leadersTitle">Our Leadership</h1>
+
+        <div className="leaderCard">
+          <div class="profile-card">
+            <img class="profile-image" src={PstChidi} alt="Profile Image" />
+            <h4 class="profile-name">Pst Chidi Ani</h4>
+            <p class="profile-description">Founder/President</p>
+            <div class="social-media">
+              <a href="#">
+                {" "}
+                <FaFacebookF className="icon" />{" "}
+              </a>
+              <a href="#">
+                {" "}
+                <AiFillInstagram className="icon" />{" "}
+              </a>
+            </div>
+          </div>
+
+          <div class="profile-card">
+            <img class="profile-image" src={RevGlorious} alt="Profile Image" />
+            <h4 class="profile-name">Rev Glorious Ani</h4>
+            <p class="profile-description">Worship Leader</p>
+            <div class="social-media">
+              <a href="#">
+                {" "}
+                <FaFacebookF className="icon" />{" "}
+              </a>
+              <a href="#">
+                {" "}
+                <AiFillInstagram className="icon" />{" "}
+              </a>
+            </div>
+          </div>
+
+          <div class="profile-card">
+            <img class="profile-image" src={PstEbuka} alt="Profile Image" />
+            <h4 class="profile-name">Pst Ebuka</h4>
+            <p class="profile-description">Pastor/Worshipper</p>
+            <div class="social-media">
+              <a href="#">
+                {" "}
+                <FaFacebookF className="icon" />{" "}
+              </a>
+              <a href="#">
+                {" "}
+                <AiFillInstagram className="icon" />{" "}
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/*======================= Contact Us Section ========================*/}
+      <section className="contactUs">
+      <h1 className="sectionTitle">Keep In Touch </h1>
+        <div class="contact-card">
+        <h2>Send in your Testimonies</h2>
+          <input type="text" placeholder="Name" />
+          <input type="email" placeholder="Email" />
+          <textarea placeholder="Testimonies"></textarea>
+          <button class="submit-button">Send</button>
+          <div class="social-media">
+            <a href="#">
+              {" "}
+              <ImWhatsapp className="icon" />{" "}
+            </a>
+            <a href="#">
+              <RiMessengerLine className="icon" />{" "}
+            </a>
+          </div>
+        </div>
       </section>
     </div>
   );

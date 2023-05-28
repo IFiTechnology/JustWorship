@@ -1,1 +1,83 @@
-/*# sourceMappingURL=Footer.css.map */
+:root {
+  --PrimaryColor: hsl(44, 95%, 43%);
+  --SecondaryColor: hsla(180, 6%, 85%, 0.938);
+  --gradientColor: linear-gradient(to right, hsl(48, 11%, 74%), hsl(44, 92%, 49%));
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(201, 33%, 16%);
+  --textColor: hsl(240, 4%, 36%);
+}
+
+.footer {
+  background-color: var(--blackColor);
+  color: #fff;
+  padding: 40px 0;
+  font-size: 14px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer-section {
+  flex: 0 0 100%;
+  margin-bottom: 20px;
+}
+@media (min-width: 768px) {
+  .footer-section {
+    flex: 0 0 calc(25% - 20px);
+    margin-bottom: 0;
+  }
+}
+.footer-section h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.footer-section p {
+  line-height: 1.5;
+  font-size: 12px;
+}
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-section ul li {
+  margin-bottom: 5px;
+}
+.footer-section ul li .icon {
+  font-size: 14;
+}
+.footer-section ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer-section ul li a:hover {
+  color: #999;
+}
+.footer-section .social-media {
+  display: flex;
+  margin-top: 10px;
+}
+.footer-section .social-media a {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 50%;
+  margin-right: 10px;
+  text-align: center;
+  line-height: 30px;
+  color: #333;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+.footer-section .social-media a:hover {
+  background-color: #999;
+  color: #fff;
+}/*# sourceMappingURL=Footer.css.map */

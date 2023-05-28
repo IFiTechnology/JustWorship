@@ -12,21 +12,20 @@
 }
 
 .about {
-  padding: 5rem;
   .card {
     box-shadow: 0 2px 4px rgba(2, 15, 29, 0.295);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    // justify-content: center;
+    // align-items: center;
 
     img {
-      width: 600px;
-      height: 100%;
+      width: 100%;
       
     }
 
     .card__content {
       padding: 25px;
+      color: #4e3501;
       h3 {
         font-size: 20px;
         position: relative;
@@ -55,14 +54,14 @@
 
       p {
         padding: 10px;
-        font-size: 1rem;
+        font-size: .8rem;
       }
 
       .aboutBtn {
         display: flex;
         justify-content: end;
         align-items: center;
-        margin-top: 30px;
+        margin-top: 20px;
         .btn {
           background: transparent;
           color: var(--PrimaryColor);
@@ -72,3 +71,42 @@
     }
   }
 }
+
+// <================================ MEDIA QUERY ==============================>
+
+@media screen and (min-width: 768px){
+  .about{
+    padding: 0;
+    margin: .5rem;
+    .card{
+      display: flex;
+      flex: flex-grow;
+      justify-content: center;
+      align-items: center;
+      img{
+        width: 450px;
+        height: auto;
+        margin-left: 4px;
+        box-shadow: 0 2px 4px rba(6, 15, 24, 0.699);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1000px){
+  .about{
+    padding: 5rem 2rem;
+    .card{
+      img{
+        width: 650px;
+        height: auto;
+      }
+      .card__content{
+        p{
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
