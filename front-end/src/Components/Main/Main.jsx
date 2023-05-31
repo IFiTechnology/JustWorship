@@ -139,7 +139,7 @@ const Main = () => {
           <input type="email" placeholder="Email" />
           <textarea placeholder="Testimonies"></textarea>
           <button class="submit-button">Send</button>
-          <div class="social-media">
+          {/* <div class="social-media">
             <a href="#">
               {" "}
               <ImWhatsapp className="icon" />{" "}
@@ -147,7 +147,7 @@ const Main = () => {
             <a href="#">
               <RiMessengerLine className="icon" />{" "}
             </a>
-          </div>
+          </div> */}
         </div>
       </section>
     </div>

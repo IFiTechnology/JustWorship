@@ -74,13 +74,38 @@
   background: transparent;
   color: var(--PrimaryColor);
 }
-.home .homeContent .buttonDiv .live {
+.home .homeContent .buttonDiv .stream-btn {
   background-color: transparent;
   color: var(--PrimaryColor);
 }
-.home .homeContent .buttonDiv .live:hover {
+.home .homeContent .buttonDiv .stream-btn:hover {
   background: var(--PrimaryColor);
   color: black;
+}
+.home .homeContent .buttonDiv .icons-container {
+  position: absolute;
+  display: flex;
+  margin-top: 10px;
+}
+.home .homeContent .buttonDiv .icons-container a {
+  display: flex;
+  flex-grow: grow;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 50%;
+  margin-right: 10px;
+  text-align: center;
+  line-height: 30px;
+  color: var(--PrimaryColor);
+  font-size: 20px;
+  transition: background-color 0.3s ease;
+}
+.home .homeContent .buttonDiv .icons-container a:hover {
+  background-color: var(--PrimaryColor);
+  color: #fff;
 }
 
 @media screen and (min-width: 500px) {
@@ -115,6 +140,8 @@
     word-break: break-all;
   }
   .home .homeContent .buttonDiv {
+    display: flex;
+    gap: 1px;
     margin-top: 10px;
   }
   .home .homeContent .buttonDiv .btn {
