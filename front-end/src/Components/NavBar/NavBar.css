@@ -1,14 +1,10 @@
 :root {
-  --PrimaryColor: #e7a304;
+  --PrimaryColor: #E7A304;
   --SecondaryColor: hsla(180, 6%, 85%, 0.938);
-  --gradientColor: linear-gradient(
-    to right,
-    hsl(33, 79%, 29%),
-    hsl(44, 92%, 49%)
-  );
+  --gradientColor: linear-gradient(to right, hsl(48, 11%, 74%), hsl(44, 92%, 49%));
   --whiteColor: hsl(0, 0%, 100%);
   --blackColor: hsl(201, 33%, 16%);
-  --textColor: #4e3501;
+  --textColor: hsl(240, 4%, 36%);
 }
 
 .header {
@@ -140,7 +136,7 @@
 }
 @media screen and (min-width: 960px) {
   .header {
-    padding: 0 3rem;
+    padding: 0 5rem;
   }
   .header .navBar .navLists {
     display: flex;

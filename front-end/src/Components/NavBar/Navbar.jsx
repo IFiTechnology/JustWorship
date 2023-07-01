@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import JWLogo from "../../Assets/JWLogoW.png";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { VscThreeBars } from "react-icons/vsc";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -23,9 +24,9 @@ const Navbar = () => {
     <section className="navBarSection">
       <header className="header flex">
         <div className="logoDiv">
-          <a href="#" className="logo">
+          <Link to="/home" className="logo">
             <img src={JWLogo} alt="Logo" />
-          </a>
+            </Link>
         </div>
 
         {/* <===================== Function that retuns false for the value of isMobile once any of the navLinks is clicked ========================>  */}
@@ -35,45 +36,40 @@ const Navbar = () => {
         >
           <ul className="navLists flex">
             <li className="navItem">
-              <a href="#" className="navLink">
+              <Link to="/home" className="navLink">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="navItem">
-              <a href="#" className="navLink">
+              <Link to="/about" className="navLink">
                 About
-              </a>
+              </Link>
             </li>
             <li
               onMouseEnter={handleDropdownOpen}
               onMouseLeave={handleDropdownClose}
               className="navItem dropdown"
             >
-              <a href="/" className="navLink">
+              <Link to="/event" className="navLink">
                 Event
-              </a>
+              </Link>
               {isDropdownOpen && (
                 <div className="dropdown-content">
-                  <a href="/">Campus Tour</a>
-                  <a href="/">Worship Meeting</a>
-                  <a href="/">Retreat</a>
-                  <a href="/">Live Recording</a>
+                  <Link to="/">Campus Tour</Link>
+                  <Link to="/">Worship Meeting</Link>
+                  <Link to="/">Retreat</Link>
+                  <Link to="/">Live Recording</Link>
                 </div>
               )}
             </li>
             <li className="navItem">
-              <a href="#" className="navLink">
-                Blog
-              </a>
-            </li>
-            <li className="navItem">
-              <a href="#" className="navLink">
+              <Link to="/gallery" className="navLink">
                 Gallery
-              </a>
+              </Link>
             </li>
 
             <button className="btn">
-              <a href="#">PARTNER</a>
+              <Link to="/partnership">PARTNER</Link>
             </button>
           </ul>
         </div>
