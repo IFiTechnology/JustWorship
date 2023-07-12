@@ -6,7 +6,6 @@ import { AiFillInstagram } from "react-icons/ai";
 import { RiSpotifyLine } from "react-icons/ri";
 import { SiAudiomack } from "react-icons/si";
 import { SiApplemusic } from "react-icons/si";
-import { SiYoutubemusic } from "react-icons/si";
 import { BsYoutube } from "react-icons/bs";
 import "./Home.css";
 

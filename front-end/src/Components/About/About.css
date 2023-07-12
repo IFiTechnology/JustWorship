@@ -8,7 +8,6 @@
 }
 
 .about .card {
-  box-shadow: 0 2px 4px rgba(2, 15, 29, 0.295);
   display: grid;
 }
 .about .card img {
@@ -44,17 +43,6 @@
   padding: 10px;
   font-size: 0.8rem;
 }
-.about .card .card__content .aboutBtn {
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  margin-top: 20px;
-}
-.about .card .card__content .aboutBtn .btn {
-  background: transparent;
-  color: var(--PrimaryColor);
-  border: 1px var(--PrimaryColor) solid;
-}
 
 @media screen and (min-width: 768px) {
   .about {
@@ -70,7 +58,6 @@
   .about .card img {
     width: 450px;
     height: auto;
-    margin-left: 4px;
     box-shadow: 0 2px 4px rba(6, 15, 24, 0.699);
   }
 }

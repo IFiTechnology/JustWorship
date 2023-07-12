@@ -90,6 +90,16 @@ input{
   border-left: 5px var(--PrimaryColor) solid;
   color: var(--whiteColor);
 }
+
+.sectionTitleW {
+  font-size: 40px;
+  font-weight: 600;
+  margin-top: 4rem;
+  margin-left: 10px;
+  padding-left: 2px;
+  border-left: 5px var(--PrimaryColor) solid;
+  color: #4e3501;
+}
 /* 
 body{
   background: url();
