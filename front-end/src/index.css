@@ -14,7 +14,10 @@
   --whiteColor: hsl(0, 0%, 100%);
   --blackColor: hsl(201, 33%, 16%);
   --textColor: hsl(240, 4%, 36%);
+}
 
+html{
+  scroll-behavior: smooth;
 }
 
 a{
@@ -26,7 +29,7 @@ li{
 }
 
 .section{
-  padding: 4rem 0 2rem;
+  padding: 3rem 0 2rem;
 }
 
 .container{
@@ -35,7 +38,7 @@ li{
 }
 
 .icon{
-  font-size: 2rem;
+  /* font-size: 2rem; */
   cursor: pointer;
 }
 
@@ -76,6 +79,16 @@ img, video{
 
 input{
   font-size: 100%;
+}
+
+.sectionTitle {
+  font-size: 40px;
+  font-weight: 600;
+  margin-top: 4rem;
+  margin-left: 10px;
+  padding-left: 2px;
+  border-left: 5px var(--PrimaryColor) solid;
+  color: var(--whiteColor);
 }
 /* 
 body{
