@@ -82,7 +82,7 @@ const Main = () => {
 
         <div className="leaderCard">
           <div class="profile-card">
-            <img class="profile-image" src={PstChidi} alt="Profile Image" />
+            <img class="profile-image" src={PstChidi} alt="Profile-Image" />
             <h4 class="profile-name">Pst Chidi Ani</h4>
             <p class="profile-description">Founder/President</p>
             <div class="social-media">

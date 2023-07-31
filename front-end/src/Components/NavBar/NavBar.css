@@ -1,14 +1,10 @@
 :root {
-  --PrimaryColor: #e7a304;
+  --PrimaryColor: #E7A304;
   --SecondaryColor: hsla(180, 6%, 85%, 0.938);
-  --gradientColor: linear-gradient(
-    to right,
-    hsl(33, 79%, 29%),
-    hsl(44, 92%, 49%)
-  );
+  --gradientColor: linear-gradient(to right, hsl(48, 11%, 74%), hsl(44, 92%, 49%));
   --whiteColor: hsl(0, 0%, 100%);
   --blackColor: hsl(201, 33%, 16%);
-  --textColor: #4e3501;
+  --textColor: hsl(240, 4%, 36%);
 }
 
 .header {
@@ -16,11 +12,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: var(--whiteColor);
   width: 100%;
   padding: 0.2rem 1rem;
   z-index: 1000;
+  transition: background-color 0.3s ease-in-out;
+}
+.header.opaque {
+  background-color: var(--whiteColor);
   box-shadow: 0 2px 4px rgba(2, 15, 29, 0.295);
+  color: #4e3501;
 }
 .header .dropdown {
   position: relative;
@@ -127,7 +127,7 @@
     flex-direction: row;
   }
   .header .navBar .navLists .navItem .navLink {
-    color: #4e3501;
+    color: white;
     padding: 0 0.45rem;
     font-size: 1.2rem;
     font-weight: 600;
@@ -137,10 +137,13 @@
     border-bottom: 3px var(--PrimaryColor) solid;
     transition: 0.3s ease-in-out;
   }
+  .header .navBar .navLists .navItem .navLink.opaque {
+    color: #4e3501;
+  }
 }
 @media screen and (min-width: 960px) {
   .header {
-    padding: 0 3rem;
+    padding: 0 5rem;
   }
   .header .navBar .navLists {
     display: flex;

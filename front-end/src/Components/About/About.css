@@ -1,18 +1,13 @@
 :root {
-  --PrimaryColor: hsl(44, 95%, 43%);
+  --PrimaryColor: #E7A304;
   --SecondaryColor: hsla(180, 6%, 85%, 0.938);
-  --gradientColor: linear-gradient(
-    to right,
-    hsl(48, 11%, 74%),
-    hsl(44, 92%, 49%)
-  );
+  --gradientColor: linear-gradient(to right, hsl(48, 11%, 74%), hsl(44, 92%, 49%));
   --whiteColor: hsl(0, 0%, 100%);
   --blackColor: hsl(201, 33%, 16%);
   --textColor: hsl(240, 4%, 36%);
 }
 
 .about .card {
-  box-shadow: 0 2px 4px rgba(2, 15, 29, 0.295);
   display: grid;
 }
 .about .card img {
@@ -48,17 +43,6 @@
   padding: 10px;
   font-size: 0.8rem;
 }
-.about .card .card__content .aboutBtn {
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  margin-top: 20px;
-}
-.about .card .card__content .aboutBtn .btn {
-  background: transparent;
-  color: var(--PrimaryColor);
-  border: 1px var(--PrimaryColor) solid;
-}
 
 @media screen and (min-width: 768px) {
   .about {
@@ -74,7 +58,6 @@
   .about .card img {
     width: 450px;
     height: auto;
-    margin-left: 4px;
     box-shadow: 0 2px 4px rba(6, 15, 24, 0.699);
   }
 }

@@ -1,15 +1,15 @@
-import React, { useState } from "react";
-import JWLogo from "../../Assets/JWLogoW.png";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { VscThreeBars } from "react-icons/vsc";
+import JWLogo from "../../Assets/JWLogoW.png";
+import JWLogoScroll from "../../Assets/JWLogo.png";
 import "./Navbar.css";
 
 const Navbar = () => {
-  // <==========================Using useState to make the navBar responsive==================>
   const [isMobile, setIsMobile] = useState(false);
-
-  // <===================== Using usestate for the navbar dropdown========================>
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isNavbarOpaque, setIsNavbarOpaque] = useState(false);
 
   const handleDropdownOpen = () => {
     setIsDropdownOpen(true);
@@ -19,14 +19,33 @@ const Navbar = () => {
     setIsDropdownOpen(false);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset;
+      const threshold = 100; // Adjust the threshold value as needed
+
+      if (scrollTop > threshold) {
+        setIsNavbarOpaque(true);
+      } else {
+        setIsNavbarOpaque(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <section className="navBarSection">
-      <header className="header flex">
-        <div className="logoDiv">
-          <a href="#" className="logo">
-            <img src={JWLogo} alt="Logo" />
-          </a>
-        </div>
+    <section className={`navBarSection ${isNavbarOpaque ? "opaque" : ""}`}>
+      <header className={`header flex ${isNavbarOpaque ? "opaque" : ""}`}>
+      <div className="logoDiv">
+    <Link to="/home" className="logo">
+      <img src={isNavbarOpaque ? JWLogo : JWLogoScroll } alt="Logo" />
+    </Link>
+  </div>
 
         {/* <===================== Function that retuns false for the value of isMobile once any of the navLinks is clicked ========================>  */}
         <div
@@ -35,45 +54,51 @@ const Navbar = () => {
         >
           <ul className="navLists flex">
             <li className="navItem">
-              <a href="#" className="navLink">
+              <Link to="/home" className={`navLink ${isNavbarOpaque ? "opaque" : ""}`}>
                 Home
-              </a>
+              </Link>
             </li>
             <li className="navItem">
-              <a href="#" className="navLink">
+              <Link to="/about" className={`navLink ${isNavbarOpaque ? "opaque" : ""}`}>
                 About
-              </a>
+              </Link>
             </li>
             <li
               onMouseEnter={handleDropdownOpen}
               onMouseLeave={handleDropdownClose}
               className="navItem dropdown"
             >
-              <a href="/" className="navLink">
+              <Link to="/event" className={`navLink ${isNavbarOpaque ? "opaque" : ""}`}>
                 Event
-              </a>
+              </Link>
               {isDropdownOpen && (
                 <div className="dropdown-content">
-                  <a href="/">Campus Tour</a>
-                  <a href="/">Worship Meeting</a>
-                  <a href="/">Retreat</a>
-                  <a href="/">Live Recording</a>
+                  <Link to="/">Campus Tour</Link>
+                  <Link to="/">Worship Meeting</Link>
+                  <Link to="/">Retreat</Link>
+                  <Link to="/">Live Recording</Link>
                 </div>
               )}
             </li>
             <li className="navItem">
-              <a href="#" className="navLink">
+              <Link to="/blog" className={`navLink ${isNavbarOpaque ? "opaque" : ""}`}>
                 Blog
-              </a>
+              </Link>
             </li>
             <li className="navItem">
-              <a href="#" className="navLink">
+              <Link to="/gallery" className={`navLink ${isNavbarOpaque ? "opaque" : ""}`}>
                 Gallery
-              </a>
+              </Link>
             </li>
 
             <button className="btn">
-              <a href="#">PARTNER</a>
+              <a
+                href="https://www.paypal.com/donate/?hosted_button_id=K7QKASNHPRRCN"
+                target="_blank"
+                rel="noreferrer"
+              >
+                PARTNER
+              </a>
             </button>
           </ul>
         </div>

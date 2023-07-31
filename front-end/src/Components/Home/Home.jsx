@@ -6,7 +6,6 @@ import { AiFillInstagram } from "react-icons/ai";
 import { RiSpotifyLine } from "react-icons/ri";
 import { SiAudiomack } from "react-icons/si";
 import { SiApplemusic } from "react-icons/si";
-import { SiYoutubemusic } from "react-icons/si";
 import { BsYoutube } from "react-icons/bs";
 import "./Home.css";
 
@@ -46,21 +45,21 @@ const Home = () => {
             {showIcons && (
               <div className="icons-container">
                 <a
-                  href="https://www.facebook.com"
+                  href="https://web.facebook.com/Justworshipinternational"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <FaFacebookF className="icon" />
                 </a>
                 <a
-                  href="https://www.twitter.com"
+                  href="https://instagram.com/justworshipinternational?igshid=OGQ5ZDc2ODk2ZA=="
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <AiFillInstagram className="icon" />
                 </a>
                 <a
-                  href="https://www.instagram.com"
+                  href="https://t.me/justworshipinternational"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -72,14 +71,17 @@ const Home = () => {
           </div>
 
           <div className="stream-icons">
-            <button className="stream-btn btn" onClick={handleStreamButtonClick}>
+            <button
+              className="stream-btn btn"
+              onClick={handleStreamButtonClick}
+            >
               Stream
             </button>
 
             {showStreamIcons && (
               <div className="icons-container">
                 <a
-                  href="https://www.facebook.com"
+                  href="https://open.spotify.com/artist/1qPJZMQy4v1XXtJcrogEiL?si=8_bdsGYYRYWBP4OZZSgvYg"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -101,15 +103,7 @@ const Home = () => {
                 </a>
 
                 <a
-                  href="https://www.instagram.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <SiYoutubemusic className="icon" />
-                </a>
-
-                <a
-                  href="https://www.instagram.com"
+                  href="https://youtube.com/@JUSTWORSHIPINTERNATIONAL"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

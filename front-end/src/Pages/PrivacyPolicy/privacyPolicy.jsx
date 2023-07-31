@@ -1,10 +1,13 @@
 import React from "react";
 import "./privacyPolicy.css";
+import Navbar from "../../Components/NavBar/Navbar";
+import Footer from "../../Components/Footer/Footer";
 
 const privacyPolicy = () => {
   return (
-    <section className="privacy container section">
-      <div class="privacy-policy-page">
+    <section className="privacy">
+      <Navbar />
+      <div class="privacy-policy-page container section">
         <h1>Privacy Policy</h1>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet
@@ -21,6 +24,7 @@ const privacyPolicy = () => {
           <a href="/privacy-policy">Privacy Policy</a>.
         </p>
       </div>
+      <Footer />
     </section>
   );
 };
