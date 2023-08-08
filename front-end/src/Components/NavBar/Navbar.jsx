@@ -4,7 +4,7 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import { VscThreeBars } from "react-icons/vsc";
 import JWLogo from "../../Assets/JWLogoW.png";
 import JWLogoScroll from "../../Assets/JWLogo.png";
-import "./Navbar.css";
+import "./NavBar.css";
 
 const Navbar = () => {
   const [isMobile, setIsMobile] = useState(false);
