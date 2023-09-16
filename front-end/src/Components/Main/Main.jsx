@@ -1,16 +1,16 @@
 import React from "react";
 import Wgathering from "../../Assets/WGathering.jpg";
-import JWUnec from "../../Assets/JWUnec.jpg";
-import JWAbuja from "../../Assets/JWAbuja.jpg";
-import LiveRecording from "../../Assets/LiveRecording.jpg";
+import JW23 from "../../Assets/JW23.jpeg";
+// import JWAbuja from "../../Assets/JWAbuja.jpg";
+// import LiveRecording from "../../Assets/LiveRecording.jpg";
 import PstChidi from "../../Assets/PstChidi1.jpg";
 import RevGlorious from "../../Assets/RevGlorious.jpg";
-import PstEbuka from "../../Assets/PstEbuka.jpg";
+// import PstEbuka from "../../Assets/PstEbuka.jpg";
 import { FaFacebookF } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { RiMessengerLine } from "react-icons/ri";
-import { ImWhatsapp } from "react-icons/im";
 import "./Main.css";
+import { Link } from "react-router-dom";
 
 const Main = () => {
   return (
@@ -31,23 +31,27 @@ const Main = () => {
                 Jesus Christ.
               </p>
             </div>
-            <div class="eventCard-date">Every Mon 5PM</div>
+            <div class="eventCard-date">Every Mon 4PM</div>
           </div>
-          <div class="eventCard">
-            <div class="eventCard-image">
-              <img src={JWUnec} />
+          <Link to="/JW2023Registration">
+            <div class="eventCard">
+              <div class="eventCard-image">
+                <img src={JW23} />
+              </div>
+              <div class="eventCard-text">
+                <h2 class="eventCard-title">Just Worship 2023</h2>
+                <p class="eventCard-body">
+                  Just worship is an annual worship and praise outreach,
+                  organized by a team of worship leaders in and outside Nigeria
+                  with the sole intent of inspiring intimacy with God through
+                  worship and praise.
+                </p>
+              </div>
+              <div class="eventCard-date">Register</div>
             </div>
-            <div class="eventCard-text">
-              <h2 class="eventCard-title">Just Worship Unec</h2>
-              <p class="eventCard-body">
-                The Lord is calling us back to campus outreaches as the ministry
-                expands to different cities and nations. We are starting the
-                campus tour from the University of Nigeria Enugu Campus (UNEC).
-              </p>
-            </div>
-            <div class="eventCard-date">Every Mon 5PM</div>
-          </div>
-          <div class="eventCard">
+          </Link>
+          {/* Pending events */}
+          {/* <div class="eventCard">
             <div class="eventCard-image">
               <img src={JWAbuja} />
             </div>
@@ -73,7 +77,7 @@ const Main = () => {
               </p>
             </div>
             <div class="eventCard-date">Every Mon 5PM</div>
-          </div>
+          </div> */}
         </div>
       </section>
       {/*====================== Leadership Section =========================*/}
@@ -82,15 +86,15 @@ const Main = () => {
 
         <div className="leaderCard">
           <div class="profile-card">
-            <img class="profile-image" src={PstChidi} alt="Profile-Image" />
+            <img class="profile-image" src={PstChidi} alt="Profile Image" />
             <h4 class="profile-name">Pst Chidi Ani</h4>
             <p class="profile-description">Founder/President</p>
             <div class="social-media">
-              <a href="#">
+              <a href="https://web.facebook.com/chididavidanii">
                 {" "}
                 <FaFacebookF className="icon" />{" "}
               </a>
-              <a href="#">
+              <a href="https://www.instagram.com/chididavidani/">
                 {" "}
                 <AiFillInstagram className="icon" />{" "}
               </a>
@@ -102,18 +106,18 @@ const Main = () => {
             <h4 class="profile-name">Rev Glorious Ani</h4>
             <p class="profile-description">Worship Leader</p>
             <div class="social-media">
-              <a href="#">
+              <a href="https://web.facebook.com/chididavidanii">
                 {" "}
                 <FaFacebookF className="icon" />{" "}
               </a>
-              <a href="#">
+              <a href="https://www.instagram.com/chididavidani/">
                 {" "}
                 <AiFillInstagram className="icon" />{" "}
               </a>
             </div>
           </div>
 
-          <div class="profile-card">
+          {/* <div class="profile-card">
             <img class="profile-image" src={PstEbuka} alt="Profile Image" />
             <h4 class="profile-name">Pst Ebuka</h4>
             <p class="profile-description">Pastor/Worshipper</p>
@@ -127,14 +131,14 @@ const Main = () => {
                 <AiFillInstagram className="icon" />{" "}
               </a>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
       {/*======================= Contact Us Section ========================*/}
       <section className="contactUs">
-      <h1 className="sectionTitle">Keep In Touch </h1>
+        <h1 className="sectionTitle">Keep In Touch </h1>
         <div class="contact-card">
-        <h2>Send in your Testimonies</h2>
+          <h2>Send in your Testimonies</h2>
           <input type="text" placeholder="Name" />
           <input type="email" placeholder="Email" />
           <textarea placeholder="Testimonies"></textarea>
