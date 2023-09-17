@@ -33,7 +33,7 @@ const Home = () => {
             Inspiring intimacy <br /> with GOD through Worship <br /> and Praise
           </h1>
           <p className="smallText">
-            Amongst the thousand let your voice be heard.
+            Amongst the thousands let your voice be heard.
           </p>
         </div>
         <div className="buttonDiv">

@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import formLogo from "../../Assets/JWLogoW.png";
 import JW2023 from "../../Assets/JW23.jpeg";
+import Navbar from "../../Components/NavBar/Navbar";
+import Footer from "../../Components/Footer/Footer"; 
 import "./registration.css";
 
 function RegistrationForm() {
@@ -58,7 +60,7 @@ function RegistrationForm() {
       if (response.status === 200) {
         // Handle a successful response (e.g., show a success message)
         setSuccessMessage(
-          "🎉 Registration successful! Welcome to Just Worship 2023! We worship GOD inspite of our feeling 🎉"
+          "🎉 Registration successful! Welcome to Just Worship 2023! We worship GOD inspite of our feelings 🎉"
         );
         setErrorMessage("");
         // You can also reset the form fields if needed
@@ -84,6 +86,7 @@ function RegistrationForm() {
   };
 
   return (
+    <>
     <div className="regForm">
       <div className="formCard">
         <div className="formImage">
@@ -170,6 +173,8 @@ function RegistrationForm() {
         </div>
       </div>
     </div>
+    <Footer />
+    </>
   );
 }
 

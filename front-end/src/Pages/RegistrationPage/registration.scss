@@ -1,7 +1,7 @@
 
 .regForm {
   background: url(../../Assets/BGImage1.jpg);
-  padding-top: 20px;
+  // padding-top: 20px;
   background-size: cover;
   background-position: right;
   background-attachment: fixed;
@@ -19,6 +19,7 @@
     box-shadow: 0px 0px 10px rgba(44, 43, 43, 0.1);
     background-color: #fff;
     margin-bottom: 80px;
+    margin-top: 20px;
   }
 
   .formImage img {
@@ -76,6 +77,7 @@
     display: flex;
     justify-content: center;
     align-content: center;
+    margin-bottom: 30px;
   }
 
   .btn {
@@ -114,5 +116,9 @@
       width: 100%;
       max-width: 600px;
     }
+
+  .regBtn {
+    margin-bottom: 0px;
+  }
   }
 }
