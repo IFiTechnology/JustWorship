@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import formLogo from "../../Assets/JWLogoW.png";
 import JW2023 from "../../Assets/JW23.jpeg";
 import Navbar from "../../Components/NavBar/Navbar";
-import Footer from "../../Components/Footer/Footer"; 
+import Footer from "../../Components/Footer/Footer";
 import "./registration.css";
 
 function RegistrationForm() {
@@ -11,11 +13,13 @@ function RegistrationForm() {
     name: "",
     phoneNumber: "",
     address: "",
-    state: "",
     closestLandmark: "",
+    city: "",
+    state: "",
+    referredBy: "",
+    referralPhoneNumber: "",
   });
-  const [successMessage, setSuccessMessage] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -28,11 +32,11 @@ function RegistrationForm() {
     try {
       // Your Airtable API endpoint URL
       const airtableEndpoint =
-        "https://api.airtable.com/v0/appNIdOilXjPPiW0I/Entry";
+        "https://api.airtable.com/v0/appkL9EHAobXJFSLG/Data";
 
       // Airtable API Key
       const apiKey =
-        "patG5tTw6Jn2mUQpu.490f2b2769981f836564171fee1f2467cbf38fe4462f9e60b9fa38199447e742";
+        "pat1k1Ce24UPhSJAG.bfbb7418032609372446c6b17af2cbece8f830ec83b2bd5a3ccb8d6b18a54e20";
 
       // Generate the current timestamp
       const registrationTimestamp = new Date().toUTCString();
@@ -40,12 +44,15 @@ function RegistrationForm() {
       // Data to send to Airtable, including the timestamp
       const data = {
         fields: {
-          Name: formData.name,
+          "Full Name": formData.name,
           "Phone Number": formData.phoneNumber,
           Address: formData.address,
-          State: formData.state,
           "Closest Landmark": formData.closestLandmark,
-          Timestamp: registrationTimestamp, // Add this field for timestamp
+          City: formData.city,
+          State: formData.state,
+          "Who Referred You": formData.referredBy,
+          "Referral Phone Number": formData.referralPhoneNumber,
+          Timestamp: registrationTimestamp,
         },
       };
 
@@ -58,28 +65,44 @@ function RegistrationForm() {
       });
 
       if (response.status === 200) {
-        // Handle a successful response (e.g., show a success message)
-        setSuccessMessage(
-          "🎉 Registration successful! Welcome to Just Worship 2023! We worship GOD inspite of our feelings 🎉"
+        // Display a success message using react-toastify
+        toast.success(
+          "🎉 Registration successful! 🎉",
+          {
+            position: toast.POSITION.TOP_RIGHT,
+            autoClose: 5000, // Close the message after 5 seconds
+          }
         );
-        setErrorMessage("");
+
         // You can also reset the form fields if needed
         setFormData({
           name: "",
           phoneNumber: "",
           address: "",
-          state: "",
           closestLandmark: "",
+          city: "",
+          state: "",
+          referredBy: "",
+          referralPhoneNumber: "",
         });
       } else {
-        // Handle an error response (e.g., show an error message)
-        setErrorMessage("❌ Registration failed. Please try again. ❌");
-        setSuccessMessage("");
+        // Display an error message
+        toast.error(
+          "❌ Registration failed. Please try again. ❌",
+          {
+            position: toast.POSITION.TOP_CENTER,
+            autoClose: 5000,
+          }
+        );
       }
     } catch (error) {
       // Handle any network or other errors
-      setErrorMessage(
-        "❌ An error occurred. Please check your connection and try again later. ❌"
+      toast.error(
+        "❌ An error occurred. Please check your connection and try again later. ❌",
+        {
+          position: toast.POSITION.TOP_CENTER,
+          autoClose: 5000,
+        }
       );
       console.error("An error occurred:", error);
     }
@@ -87,93 +110,128 @@ function RegistrationForm() {
 
   return (
     <>
-    <div className="regForm">
-      <div className="formCard">
-        <div className="formImage">
-          <img src={JW2023} alt="" />
-        </div>
-        <div className="form">
-          <div className="formLogo">
-            <div className="logoImg">
-              <img src={formLogo} alt="" />
-            </div>
-            <h3>Just Worship 2023 Registration Form</h3>
+      <Navbar />
+      <div className="regForm">
+        <div className="formCard">
+          <div className="formImage">
+            <img src={JW2023} alt="" />
           </div>
-          {successMessage && (
-            <div className="successMessage">{successMessage}</div>
-          )}
-          {errorMessage && <div className="errorMessage">{errorMessage}</div>}
-          <form onSubmit={handleSubmit}>
-            <div className="form-input">
-              <input
-                className="form-control"
-                placeholder="Name"
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-              />
+          <div className="form">
+            <div className="formLogo">
+              <div className="logoImg">
+                <img src={formLogo} alt="" />
+              </div>
+              <h3>Just Worship 2023 Registration Form</h3>
             </div>
-            <div className="form-input">
-              <input
-                className="form-control"
-                placeholder="Phone Number"
-                type="tel"
-                id="phoneNumber"
-                name="phoneNumber"
-                value={formData.phoneNumber}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div className="form-input">
-              <input
-                className="form-control"
-                placeholder="Address"
-                type="text"
-                id="address"
-                name="address"
-                value={formData.address}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div className="form-input">
-              <input
-                className="form-control"
-                placeholder="state"
-                type="text"
-                id="state"
-                name="state"
-                value={formData.state}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div className="form-input">
-              <input
-                className="form-control"
-                placeholder="Closest Landmark"
-                type="text"
-                id="closestLandmark"
-                name="closestLandmark"
-                value={formData.closestLandmark}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div className="regBtn">
-            <button className="btn" type="submit">
-              Register
-            </button>
-            </div>
-          </form>
+         
+            <form onSubmit={handleSubmit}>
+              <div className="form-input">
+                <input
+                  className="form-control"
+                  placeholder="Full Name"
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="form-input">
+                <input
+                  className="form-control"
+                  placeholder="Phone Number"
+                  type="tel"
+                  id="phoneNumber"
+                  name="phoneNumber"
+                  value={formData.phoneNumber}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="form-input">
+                <input
+                  className="form-control"
+                  placeholder="Address"
+                  type="text"
+                  id="address"
+                  name="address"
+                  value={formData.address}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="form-input">
+                <input
+                  className="form-control"
+                  placeholder="Closest Landmark"
+                  type="text"
+                  id="closestLandmark"
+                  name="closestLandmark"
+                  value={formData.closestLandmark}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="form-input">
+                <input
+                  className="form-control"
+                  placeholder="City"
+                  type="text"
+                  id="city"
+                  name="city"
+                  value={formData.city}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="form-input">
+                <input
+                  className="form-control"
+                  placeholder="State"
+                  type="text"
+                  id="state"
+                  name="state"
+                  value={formData.state}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="form-input">
+                <input
+                  className="form-control"
+                  placeholder="Who Referred You"
+                  type="text"
+                  id="referredBy"
+                  name="referredBy"
+                  value={formData.referredBy}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="form-input">
+                <input
+                  className="form-control"
+                  placeholder="Referral Phone Number"
+                  type="tel"
+                  id="referralPhoneNumber"
+                  name="referralPhoneNumber"
+                  value={formData.referralPhoneNumber}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="regBtn">
+                <button className="btn" type="submit">
+                  Register
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
-    <Footer />
+      <Footer />
+      <ToastContainer />
     </>
   );
 }
