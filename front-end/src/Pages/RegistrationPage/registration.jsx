@@ -12,6 +12,7 @@ function RegistrationForm() {
   const [formData, setFormData] = useState({
     name: "",
     phoneNumber: "",
+    emailAddress: "",
     address: "",
     closestLandmark: "",
     city: "",
@@ -46,6 +47,7 @@ function RegistrationForm() {
         fields: {
           "Full Name": formData.name,
           "Phone Number": formData.phoneNumber,
+          "Email Address": formData.emailAddress,
           Address: formData.address,
           "Closest Landmark": formData.closestLandmark,
           City: formData.city,
@@ -78,6 +80,7 @@ function RegistrationForm() {
         setFormData({
           name: "",
           phoneNumber: "",
+          emailAddress: "",
           address: "",
           closestLandmark: "",
           city: "",
@@ -145,6 +148,18 @@ function RegistrationForm() {
                   id="phoneNumber"
                   name="phoneNumber"
                   value={formData.phoneNumber}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="form-input">
+                <input
+                  className="form-control"
+                  placeholder="Email Address"
+                  type="text"
+                  id="emailAddress"
+                  name="emailAddress"
+                  value={formData.emailAddress}
                   onChange={handleChange}
                   required
                 />
