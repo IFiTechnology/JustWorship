@@ -33,9 +33,11 @@ const Home = () => {
             Inspiring intimacy <br /> with GOD through Worship <br /> and Praise
           </h1>
           <p className="smallText">
-            Amongst the thousands let your voice be heard.
+            Amongst the thousand let your voice be heard.
           </p>
         </div>
+        {/*social media icons section*/}
+
         <div className="buttonDiv">
           <div className="social-icons">
             <button className="follow-btn btn" onClick={handleButtonClick}>
@@ -65,7 +67,6 @@ const Home = () => {
                 >
                   <FaTelegramPlane className="icon" />
                 </a>
-                {/* Add more social media icons */}
               </div>
             )}
           </div>
@@ -88,14 +89,14 @@ const Home = () => {
                   <RiSpotifyLine className="icon" />
                 </a>
                 <a
-                  href="https://www.twitter.com"
+                  href="https://audiomack.com/just-worship-team"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <SiAudiomack className="icon" />
                 </a>
                 <a
-                  href="https://www.instagram.com"
+                  href="https://music.apple.com/ng/album/yes-you-are-ep/1667963057"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
